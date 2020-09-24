@@ -1,0 +1,6 @@
+#ifndef LIGHT_HPP_INCLUDED
+#define LIGHT_HPP_INCLUDED
+
+
+
+#endif // LIGHT_HPP_INCLUDED

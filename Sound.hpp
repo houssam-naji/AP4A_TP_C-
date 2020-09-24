@@ -1,0 +1,6 @@
+#ifndef SOUND_HPP_INCLUDED
+#define SOUND_HPP_INCLUDED
+
+
+
+#endif // SOUND_HPP_INCLUDED

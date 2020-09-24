@@ -1,0 +1,5 @@
+#ifndef SCHEDULER_HPP_INCLUDED
+#define SCHEDULER_HPP_INCLUDED
+#include "Sensor.hpp"
+
+#endif // SCHEDULER_HPP_INCLUDED
