@@ -1,7 +1,9 @@
 #include <iostream>
 
+#include "Server.hpp"
+
 int main()
 {
-    std::cout << "Salut les gens" << std::endl;
+    Server server;
     return 0;
 }
