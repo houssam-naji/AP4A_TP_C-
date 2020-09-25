@@ -2,7 +2,8 @@
  * @author rgracari
  * @file Server.cpp
  * @date 24/09/220
- * @brief Description de la classe Server super!
+ * @brief Fichier d'implementation de la classe Server
+ * @copyright MIT
  */
 
 #include "Server.hpp"
