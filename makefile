@@ -11,10 +11,12 @@ OBJ := $(SRC:$(SRC_PATH)/%.cpp=$(BIN_INT_PATH)/%.o)
 
 .DEFAULT_GOAL := default
 
-.PHONY: all exec dir
+.PHONY: all exec dir compile
 
 default: dir $(EXEC)
 	@./$(BIN_PATH)/prog
+
+compile: dir $(EXEC)
 
 $(EXEC): $(OBJ)
 	@$(CXX) -o $(BIN_PATH)/$(EXEC) $^

@@ -1,0 +1,1 @@
+[LOG]: ConsolActivation: 1, LogActivation: 0
