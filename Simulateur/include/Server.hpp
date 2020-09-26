@@ -3,7 +3,8 @@
  * @author RICHARD Antoine
  * @file Server.hpp
  * @date 24/09/2020
- * @brief la classe Server permet de recevoir, de stocker et d'afficher les données envoyés provenant des capteurs de la cabine de l'avion
+ * @brief La classe Server permet de recevoir, de stocker et d'afficher les données
+ *        envoyés provenant des capteurs de la cabine de l'avion.
  *
  */
 
@@ -12,13 +13,14 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <ostream>
-#include <string>
+#include <iostream>
+#include <fstream>
 
 /**
 *
 * @class Server
-* @brief la classe Server permet de recevoir, de stocker et d'afficher les données envoyés provenant des capteurs de la cabine de l'avion
+* @brief la classe Server permet de recevoir, de stocker et d'afficher les données
+*        envoyés provenant des capteurs de la cabine de l'avion.
 *
 */
 class Server
@@ -27,7 +29,9 @@ class Server
         Server();
         Server(const Server& server);
         virtual ~Server();
-        Server& operator=(const Server& server);
+        Server& operator=(const Server& serverSource);
+        friend std::ostream& operator<<(std::ostream& output, const Server& server);
+        friend std::ofstream& operator<<(std::ofstream& file, const Server& server);
 
     protected:
 
