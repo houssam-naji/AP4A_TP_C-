@@ -30,6 +30,20 @@ Server::~Server()
 {
 }
 
-Server& Server::operator=(const Server& server){
+Server& Server::operator=(const Server& server_p){
+    this->m_consoleActivation = server_p.m_consoleActivation;
+    this->m_logActivation = server_p.m_logActivation;
     return (*this);
 }
+
+void Server::consolWrite(ostream &flux_p) const
+{
+    flux_p << "m_consoleActivation : " << m_consoleActivation << " --- m_logActivation : " << m_logActivation;
+}
+
+ostream& operator<<( ostream &flux_p, Server const& server_p )
+{
+    server_p.consolWrite(flux_p);
+    return flux_p;
+}
+

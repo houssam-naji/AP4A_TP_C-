@@ -10,7 +10,6 @@ provenant des capteurs de la cabine de l’avion.
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <sstream>
 #include <iostream>
 using namespace std;
 
@@ -25,9 +24,10 @@ class Server {
         Server();
         Server(bool,bool);
         Server (const Server&);
-        Server &operator=(const Server&);
-        Server &operator<<(const Server&);
         virtual ~Server();
+        Server &operator=(const Server&);
+        void consolWrite(std::ostream&) const;
+        friend ostream& operator<<( ostream&, Server const&);
 
 };
 
