@@ -15,12 +15,20 @@ provenant des capteurs de la cabine de l’avion.
 using namespace std;
 
 class Server {
+    private :
+
+        bool m_consoleActivation;
+        bool m_logActivation;
+
     public :
+
         Server();
+        Server(bool,bool);
         Server (const Server&);
         Server &operator=(const Server&);
         Server &operator<<(const Server&);
         virtual ~Server();
+
 };
 
 #endif /* SERVER_H */
