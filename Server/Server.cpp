@@ -1,6 +1,9 @@
-//
-// Created by louis on 21/09/20.
-//
+/**
+ * @author Louis Pascuzzi GitHub : Zapolatero
+ * @file Server.cpp
+ * @date 20/09/2020
+ * @brief cette classe recoit, stock et affiche les données envoyée par les capteurs
+ */
 
 #include "Server.hpp"
 #include <iostream>
@@ -25,14 +28,15 @@ Server::~Server()
 
 }
 
-void Server::fileWrite(int file)
+void Server::fileWrite(ofstream& file) const
 {
-    cout << file;
+    file << "log activation " << m_logActivation << ", console activation " <<  m_consolActivation; 
 }
 
-void Server::consolWrite(int file)
+
+void Server::consolWrite(ostream& output) const
 {
-    cout << file;
+    output << "log activation " << m_logActivation << ", console activation " <<  m_consolActivation; 
 }
 
 Server& Server::operator=(const Server& serv)
@@ -49,12 +53,12 @@ Server& Server::operator=(const Server& serv)
 
 ostream& operator<<(ostream& output, const Server& source) 
 { 
-    output << "log activation " << source.m_logActivation << ", console activation " <<  source.m_consolActivation;
+    source.consolWrite(output);
     return output;            
 }
 
 ofstream& operator<<(ofstream& output, const Server& source) 
 { 
-    output << "log activation " << source.m_logActivation << ", console activation " <<  source.m_consolActivation;
+    source.fileWrite(output);
     return output;            
 }
