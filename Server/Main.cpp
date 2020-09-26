@@ -1,6 +1,9 @@
-//
-// Created by louis on 21/09/20.
-//
+/**
+ * @author Louis Pascuzzi GitHub : Zapolatero
+ * @file Main.cpp
+ * @date 26/09/2020
+ * @brief sert à tester la classe Server.cpp
+ */
 
 #ifndef MAIN_H
 #define MAIN_H

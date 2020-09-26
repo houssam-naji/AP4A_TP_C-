@@ -1,0 +1,122 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+recoit, stock et affiche les données envoyée par les capteurs  
+
+
+
+
+{\ttfamily \#include $<$Server.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServer_ad5ec9462b520e59f7ea831e157ee5e59}\label{classServer_ad5ec9462b520e59f7ea831e157ee5e59}} 
+\mbox{\hyperlink{classServer_ad5ec9462b520e59f7ea831e157ee5e59}{Server}} ()
+\begin{DoxyCompactList}\small\item\em créé une instance par défaut de la classe \mbox{\hyperlink{classServer}{Server}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServer_aba7622d97e44edd37684270526561047}{Server}} (\mbox{\hyperlink{classServer}{Server}} const \&serv)
+\begin{DoxyCompactList}\small\item\em créé une nouvelle instance de la classe \mbox{\hyperlink{classServer}{Server}} par copie d\textquotesingle{}un autre server \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}} 
+virtual \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{$\sim$\+Server}} ()
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServer}{Server}} \& \mbox{\hyperlink{classServer_acf2077132e719869566060400dce9cee}{operator=}} (const \mbox{\hyperlink{classServer}{Server}} \&)
+\begin{DoxyCompactList}\small\item\em fait une copie du server en paramètre \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classServer_af40d748cf083ab668db495b2bceac324}{operator$<$$<$}} (ostream \&, const \mbox{\hyperlink{classServer}{Server}} \&)
+\begin{DoxyCompactList}\small\item\em apelle la fonction consol\+Write pour afficher les attributs du serveur dans la console \end{DoxyCompactList}\item 
+ofstream \& \mbox{\hyperlink{classServer_a81265405b0d803c85bdd009d1488769b}{operator$<$$<$}} (ofstream \&, const \mbox{\hyperlink{classServer}{Server}} \&)
+\begin{DoxyCompactList}\small\item\em apelle la fonction File\+Write pour écrire les attributs du serveur dans un fichier log \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+recoit, stock et affiche les données envoyée par les capteurs 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_aba7622d97e44edd37684270526561047}\label{classServer_aba7622d97e44edd37684270526561047}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classServer}{Server}} const \&}]{serv }\end{DoxyParamCaption})}
+
+
+
+créé une nouvelle instance de la classe \mbox{\hyperlink{classServer}{Server}} par copie d\textquotesingle{}un autre server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \mbox{\hyperlink{classServer}{Server}}\& \+: référence vers l\textquotesingle{}instance de la classe \mbox{\hyperlink{classServer}{Server}} à copier \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_acf2077132e719869566060400dce9cee}\label{classServer_acf2077132e719869566060400dce9cee}} 
+\index{Server@{Server}!operator=@{operator=}}
+\index{operator=@{operator=}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classServer}{Server}} \& Server\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classServer}{Server}} \&}]{serv }\end{DoxyParamCaption})}
+
+
+
+fait une copie du server en paramètre 
+
+\begin{DoxyReturn}{Returns}
+retourne une reference du serveur copié 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \mbox{\hyperlink{classServer}{Server}}\& \+: référence du serveur à copier \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classServer_a81265405b0d803c85bdd009d1488769b}\label{classServer_a81265405b0d803c85bdd009d1488769b}} 
+\index{Server@{Server}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ofstream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ofstream \&}]{output,  }\item[{const \mbox{\hyperlink{classServer}{Server}} \&}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+apelle la fonction File\+Write pour écrire les attributs du serveur dans un fichier log 
+
+\begin{DoxyReturn}{Returns}
+retourne un ostream contenant les informations du serveur 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \mbox{\hyperlink{classServer}{Server}}\& \+: référence du serveur dont on affiche les données \\
+\hline
+{\em ostream\&} & flux dans lequel on va indiquer les informations du serveur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_af40d748cf083ab668db495b2bceac324}\label{classServer_af40d748cf083ab668db495b2bceac324}} 
+\index{Server@{Server}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{output,  }\item[{const \mbox{\hyperlink{classServer}{Server}} \&}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+apelle la fonction consol\+Write pour afficher les attributs du serveur dans la console 
+
+\begin{DoxyReturn}{Returns}
+retourne un ostream contenant les informations du serveur 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \mbox{\hyperlink{classServer}{Server}}\& \+: référence du serveur dont on affiche les données \\
+\hline
+{\em ostream\&} & flux dans lequel on va indiquer les informations du serveur \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Server_8hpp}{Server.\+hpp}}\item 
+\mbox{\hyperlink{Server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}
