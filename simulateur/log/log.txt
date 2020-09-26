@@ -1,0 +1,1 @@
+m_consoleActivation : 1 --- m_logActivation : 0

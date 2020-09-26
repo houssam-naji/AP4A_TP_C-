@@ -36,9 +36,9 @@ Server& Server::operator=(const Server& server_p){
     return (*this);
 }
 
-void Server::consolWrite(ostream &flux_p) const
+void Server::consolWrite(ostream& flux_p) const
 {
-    flux_p << "m_consoleActivation : " << m_consoleActivation << " --- m_logActivation : " << m_logActivation;
+    flux_p << "m_consoleActivation : " << m_consoleActivation << " --- m_logActivation : " << m_logActivation << endl;
 }
 
 ostream& operator<<( ostream &flux_p, Server const& server_p )
@@ -47,3 +47,13 @@ ostream& operator<<( ostream &flux_p, Server const& server_p )
     return flux_p;
 }
 
+void Server::fileWrite(ofstream& flux_p) const
+{
+    flux_p << "m_consoleActivation : " << m_consoleActivation << " --- m_logActivation : " << m_logActivation << endl;
+}
+
+ofstream& operator<<( ofstream& flux_p, Server const& server_p )
+{
+    server_p.consolWrite(flux_p);
+    return flux_p;
+}

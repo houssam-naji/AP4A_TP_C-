@@ -11,6 +11,7 @@ provenant des capteurs de la cabine de l’avion.
 #define SERVER_H
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class Server {
@@ -28,6 +29,8 @@ class Server {
         Server &operator=(const Server&);
         void consolWrite(std::ostream&) const;
         friend ostream& operator<<( ostream&, Server const&);
+        void fileWrite(ofstream&) const;
+        friend ofstream& operator<<( ofstream&, Server const&);
 
 };
 
