@@ -1,0 +1,5 @@
+Données des capteurs : consolActivation = 0, logActivation = 0
+Données des capteurs : consolActivation = 0, logActivation = 0
+Données des capteurs : consolActivation = 0, logActivation = 0
+Données des capteurs : consolActivation = 0, logActivation = 0
+Données des capteurs : consolActivation = 0, logActivation = 0
