@@ -9,7 +9,7 @@
  */
 
 
-#include "Server.hpp"
+#include "../include/Server.hpp"
 
 /**
 *
@@ -57,8 +57,8 @@ Server& Server::operator=(const Server& serverSource)
 *
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers la console.
-* @return output: sortie.
-* @param output: sortie.
+* @return output: Référence sur un objet ostream.
+* @param output: Référence sur un objet ostream.
 * @param server: Objet de la classe Server pour lequel on veut afficher les données.
 *
 */
@@ -72,8 +72,8 @@ std::ostream& operator<<(std::ostream& output, const Server& server)
 *
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers un fichier.
-* @return file: Le fichier.
-* @param file: Fichier dans lequel on va écrire.
+* @return file: Référence sur un objet ofstream.
+* @param file: Référence sur un objet ofstream.
 * @param server: Objet de la classe Server pour lequel on veut logger les données.
 *
 */
