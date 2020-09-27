@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1601066855 source:e:\visual studio\danieltest\main.cpp
+	<iostream>
+
+1601067246 source:e:\visual studio\danieltest\header.cpp
+	"header.h"
+	<iostream>
+
+1601066535 e:\visual studio\danieltest\header.h
+	<iostream>
+
+1601056448 source:e:\utbm\ap4a\danieltest\header.cpp
+	"header.h"
+	<iostream>
+
+1601055736 e:\utbm\ap4a\danieltest\header.h
+	<iostream>
+
+1601222385 source:e:\utbm\ap4a\danieltest\main.cpp
+	<iostream>
+	"header.h"
+	<stdlib.h>
+	<stdio.h>
+
