@@ -55,6 +55,8 @@ public:
      * @return int
      */
     int getValeur() const;
+
+    void setValeur(int valeur);
 };
 
 #endif //MACLASSE_H

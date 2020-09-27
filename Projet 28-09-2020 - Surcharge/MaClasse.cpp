@@ -45,11 +45,21 @@ int MaClasse::getValeur() const {
     return this->m_valeur;
 }
 
+void MaClasse::setValeur(int valeur){
+    this->m_valeur=valeur;
+}
+
 int main(){
+    std::ofstream toFile("output.txt");
     MaClasse objet_1;
     MaClasse objet_2(objet_1);
-    std::cout<<objet_1;
-    std::ofstream toFile("output.txt");
-    toFile<<objet_2;
+
+    std::cout<<"objet_1= "<<objet_1<<"\nobjet_2= "<<objet_2;
+
+    objet_1.setValeur(3);
+    objet_2 = objet_1;
+
+    toFile<<"objet_1= "<<objet_1<<"\nobjet_2= "<<objet_2;
+
     return 0;
 }
