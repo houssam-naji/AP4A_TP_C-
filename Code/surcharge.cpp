@@ -63,7 +63,7 @@ ostream& operator<<(ostream &flux, Sensor const& sensor){
 
 void operator<<string const fichier, Sensor const sensor ){
 	
-	ofstream monFlux(fichier.c_str(), ios::app);
+	ofstream monFlux(fichier.c_str()/*, ios::app*/);
 	if(monFlux){
 		switch(sensor.getTypeNumber()){
 				case 1: //float case : temperature
