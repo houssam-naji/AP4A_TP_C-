@@ -1,6 +1,6 @@
 
 
-Sensor operator+(Sensor const& sensor1, Sensor const& sensor2){
+Sensor operator=(Sensor const& sensor1, Sensor const& sensor2){
 	
 		
 	if(sensor1 !=NULL & sensor2!=NULL & (sensor1.getType()==sensor2.getType()) )
@@ -61,7 +61,7 @@ ostream& operator<<(ostream &flux, Sensor const& sensor){
 	return flux;
 }
 
-void operator>>(string const fichier, Sensor const sensor ){
+void operator<<string const fichier, Sensor const sensor ){
 	
 	ofstream monFlux(fichier.c_str(), ios::app);
 	if(monFlux){
