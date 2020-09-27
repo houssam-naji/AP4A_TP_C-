@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+/*
+Class objet // classe pour utiliser la surchage "=" sur les objets
+{
+    public:
+    //Prototype de l'opérateur =
+    void operator=(objet const& nombre) ; //prototype de l'opérateur
+
+    private:
+    double x;
+};
+
+//définition de l'opérateur =
+void objet::operator=(objet const& double nombre)
+{
+    x=nombre;
+}
+*/
+
+struct Affichage
+{
+    string m_first;
+    string m_second;
+}
+
+ostream& operator<<(ostream &flux,Affichage aff)
+{
+    
+    flux <<Affichage.first <<" " <<Affichage.second;
+    return flux;
+} //type de retour est une référence
+
+/*
+le 1er parametre est une référence sur un objet de type ostream ,l'objet flux
+le second parametre est un renvoi de la structure Affichage qui permet d'afficher avec l'opérateur <<
+*/
+
+
+int main()
+{
+   / objet a;
+ 
+
+//Affichage des mots tapés sur l'écran
+    Affichage aff;
+    p.first="Hi";
+    p.second="Friend";
+
+    cout <<aff <<endl;
+
+
+    return 0;
+}
