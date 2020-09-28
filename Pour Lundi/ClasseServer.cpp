@@ -1,8 +1,8 @@
-/*
- * ClasseServer.cpp
- *
- *  Created on: 26 sept. 2020
- *      Author: antoi
+/**
+ * @author Antoine MOYSE
+ * @file ClasseServer.cpp
+ * @date 28/09/2020
+ * @brief Surcharge des opérateurs = et << vers console et fichier
  */
 
 #include "ClasseServer.h"
@@ -13,41 +13,41 @@ using namespace std;
 
 float Server::getTemperature()
 {
-	return s_temperature;	//Retourne la valeur de la température qui est privée
+  return s_temperature;
 }
 
 float Server::getHumidity()
 {
-	return s_humidity;	//Retourne la valeur de l'humidité qui est privée
+  return s_humidity;
 }
 
 int Server::getSound()
 {
-	return s_sound;		//Retourne la valeur du son qui est privée
+  return s_sound;
 }
 
 bool Server::getLight()
 {
-	return s_light;		//Retourne la valeur de la lumière qui est privée
+  return s_light;
 }
 
 Server& Server::operator=(const Server& Copie_Server)
 {
-	this->s_temperature=Copie_Server.s_temperature;
-	this->s_humidity=Copie_Server.s_humidity;		//"Clone" les valeurs du premier serveur vers le deuxième
-	this->s_sound=Copie_Server.s_sound;
-	this->s_light=Copie_Server.s_light;
-	return(*this);
+  this->s_temperature=Copie_Server.s_temperature;
+  this->s_humidity=Copie_Server.s_humidity;
+  this->s_sound=Copie_Server.s_sound;
+  this->s_light=Copie_Server.s_light;
+  return(*this);
 }
 
 std::ostream& operator<<(std::ostream& os, Server& LeServ)
 {
-	os << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
-	return os;	//Affiche toutes les valeurs de la classe serveur grace aux fonctions get.
+  os << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
+  return os;
 }
 
 std::ofstream& operator<<(std::ofstream& out , Server& LeServ)
 {
-	out << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
-	return out;
+  out << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
+  return out;
 }
