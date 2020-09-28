@@ -13,25 +13,25 @@ using namespace std;
 // Constructeur par défaut
 
 Server::Server(){
-    int nbrOfSensors = 4;
-    bool consolActivation = true;
-    bool logActivation = true;
+    m_nbrOfSensors = 4;
+    m_consolActivation = true;
+    m_logActivation = true;
 }
 
 // Constructeur
 
-Server::Server(int sensorsNumber, bool consolA, bool logA){
-    int nbrOfSensors = sensorsNumber;
-    bool consolActivation = consolA;
-    bool logActivation = logA;
+Server::Server(int nbrOfSensors, bool consolActivation, bool logActivation){
+    m_nbrOfSensors = nbrOfSensors;
+    m_consolActivation = consolActivation;
+    m_logActivation = logActivation;
 }
 
 // Constructeur par recopie
 
 Server::Server(const Server& server){
-    int nbrOfSensors = server.nbrOfSensors;
-    bool consolActivation = server.consolActivation;
-    bool logActivation = server.logActivation;
+    m_nbrOfSensors = server.m_nbrOfSensors;
+    m_consolActivation = server.m_consolActivation;
+    m_logActivation = server.m_logActivation;
 }
 
 //Destructeur
@@ -42,9 +42,9 @@ Server::~Server(){
 //Surcharge operateur "="
 
 Server& Server::operator=(Server const& server){
-    nbrOfSensors = server.nbrOfSensors;
-    consolActivation = server.consolActivation;
-    logActivation = server.logActivation;
+    m_nbrOfSensors = server.m_nbrOfSensors;
+    m_consolActivation = server.m_consolActivation;
+    m_logActivation = server.m_logActivation;
 }
 
 //Surcharge operateur "<<"
