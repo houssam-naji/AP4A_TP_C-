@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1601295700 source:/home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/main.cpp
+	<iostream>
+	"MonObjet.h"
+
+1601236404 source:/home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/src/MyObject.cpp
+	"MyObject.h"
+	<iostream>
+
+1601293801 /home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/include/MyObject.h
+	<iostream>
+	<ostream>
+	<fstream>
+
+1601208591 source:/home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/src/Server.cpp
+	"Server.h"
+
+1601208670 /home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/include/Server.h
+
+1601295604 source:/home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/src/MonObjet.cpp
+	"MonObjet.h"
+	<iostream>
+	<ostream>
+	<fstream>
+
+1601298031 /home/manshow/Bureau/AP4/TP/GIT/AP4A_TP_C-/CodeBlockProject/Project/include/MonObjet.h
+	<iostream>
+	<ostream>
+	<fstream>
+
