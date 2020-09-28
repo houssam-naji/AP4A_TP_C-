@@ -19,7 +19,7 @@ public:
 
 private:
 	bool s_consoleActivation;
-	bool s_logActuvation;
+	bool s_logActivation;
 	void fileWrite(type X_p);
 	void consoleWrite(type X_p);
 }
