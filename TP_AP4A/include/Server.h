@@ -25,8 +25,8 @@ class Server
         void dataRcv();
 
     private :
-        int nbrOfSensors;
-        bool consolActivation, logActivation;
+        int m_nbrOfSensors;
+        bool m_consolActivation, m_logActivation;
 
     protected :
 };
