@@ -1,4 +1,9 @@
-//Developpeur : LICATA Enzo UTBM
+/**
+* @author Licata_Enzo
+* @main.cpp
+* @date 28/09/2020
+* @main 
+*/
 
 #include <iostream>
 
