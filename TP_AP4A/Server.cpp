@@ -1,9 +1,16 @@
+/
+ @author Licata_Enzo
+ @Server.cpp
+ @date 28/09/2020
+ @Classe Server 
+/
+
 #include <iostream>
 #include "Server.h"
 
 using namespace std;
 
-// Constructeur par défaut
+// Constructeur par dÃ©faut
 
 Server::Server(){
     int nbrOfSensors = 4;
