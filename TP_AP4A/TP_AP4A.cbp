@@ -34,13 +34,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Sensor.h" />
+		<Unit filename="Server.cpp" />
 		<Unit filename="include/Server.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Sensor.cpp" />
-		<Unit filename="src/Server.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
