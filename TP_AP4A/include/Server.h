@@ -1,3 +1,10 @@
+/**
+* @author Licata_Enzo
+* @Server.h
+* @date 28/09/2020
+* @Classe Server Header
+*/
+
 #ifndef SERVER_H
 #define SERVER_H
 #include <iostream>
