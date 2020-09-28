@@ -31,5 +31,7 @@ int main() {
 	MonServer2=MonServer;			//Affectation des valeurs du premier serveur vers le deuxième
 	cout << MonServer2;				//Affichage des valeurs du deuxième serveur pour vérifier que les nouvelles valeurs ont bien été affectées
 
+	std::ofstream toFile("bonjour.txt");
+	toFile<<"Server 1 : " << MonServer << "\nServer 2 : " << MonServer2;
 	return 0;
 }

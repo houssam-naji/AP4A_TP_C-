@@ -45,3 +45,9 @@ std::ostream& operator<<(std::ostream& os, Server& LeServ)
 	os << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
 	return os;	//Affiche toutes les valeurs de la classe serveur grace aux fonctions get.
 }
+
+std::ofstream& operator<<(std::ofstream& out , Server& LeServ)
+{
+	out << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
+	return out;
+}

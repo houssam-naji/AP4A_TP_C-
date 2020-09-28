@@ -9,6 +9,7 @@
 #define SRC_CLASSESERVER_H_
 #include <ostream>
 #include <iostream>
+#include <fstream>
 
 class Server
 {
@@ -47,6 +48,8 @@ class Server
 		Server& operator=(const Server&);  //Fonction constructeur par clonage
 
 		friend std::ostream& operator<<(std::ostream&, Server&);  //Fonction qui permet d'afficher la classe
+
+		friend std::ofstream& operator<<(std::ofstream&, Server&);
 
 };
 
