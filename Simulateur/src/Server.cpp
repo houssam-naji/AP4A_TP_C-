@@ -27,13 +27,13 @@ Server::Server() : m_consolActivation(true), m_logActivation(true)
 *
 * @brief Constructeur par copie de la classe.
 * @return Aucun retour.
-* @param server : Référence sur l'objet à copier.
+* @param server_p : Référence sur l'objet à copier.
 *
 */
-Server::Server(const Server& server)
+Server::Server(const Server& server_p)
 {
-    this->m_consolActivation = server.m_consolActivation;
-    this->m_logActivation = server.m_logActivation;
+    this->m_consolActivation = server_p.m_consolActivation;
+    this->m_logActivation = server_p.m_logActivation;
 
 }
 
@@ -45,10 +45,10 @@ Server::Server(const Server& server)
 * @param serverSource : Référence sur l'objet dont le contenu va être copié.
 *
 */
-Server& Server::operator=(const Server& serverSource)
+Server& Server::operator=(const Server& server_p)
 {
-    this->m_consolActivation = serverSource.m_consolActivation;
-    this->m_logActivation = serverSource.m_logActivation;
+    this->m_consolActivation = server_p.m_consolActivation;
+    this->m_logActivation = server_p.m_logActivation;
     return *this;
 
 }
@@ -57,31 +57,31 @@ Server& Server::operator=(const Server& serverSource)
 *
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers la console.
-* @return output: Référence sur un objet ostream.
-* @param output: Référence sur un objet ostream.
-* @param server: Objet de la classe Server pour lequel on veut afficher les données.
+* @return output_p: Référence sur un objet ostream.
+* @param output_p: Référence sur un objet ostream.
+* @param server_p: Objet de la classe Server pour lequel on veut afficher les données.
 *
 */
-std::ostream& operator<<(std::ostream& output, const Server& server)
+std::ostream& operator<<(std::ostream& output_p, const Server& server_p)
 {
-    output << "-- CONSOLE : donnees des capteurs: consolActivation = " << server.m_consolActivation << ", logActivation = " << server.m_logActivation << std::endl ;
-    return output;
+    output_p << "-- CONSOLE : donnees des capteurs: consolActivation = " << server_p.m_consolActivation << ", logActivation = " << server_p.m_logActivation << std::endl ;
+    return output_p;
 }
 
 /**
 *
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers un fichier.
-* @return file: Référence sur un objet ofstream.
-* @param file: Référence sur un objet ofstream.
-* @param server: Objet de la classe Server pour lequel on veut logger les données.
+* @return file_p: Référence sur un objet ofstream.
+* @param file_p: Référence sur un objet ofstream.
+* @param server_p: Objet de la classe Server pour lequel on veut logger les données.
 *
 */
-std::ofstream& operator<<(std::ofstream& file, const Server& server)
+std::ofstream& operator<<(std::ofstream& file_p, const Server& server_p)
 {
 
-    file << "-- LOG : donnees des capteurs: consolActivation = " << server.m_consolActivation << ", logActivation = " << server.m_logActivation << std::endl;
-    return file;
+    file_p << "-- LOG : donnees des capteurs: consolActivation = " << server_p.m_consolActivation << ", logActivation = " << server_p.m_logActivation << std::endl;
+    return file_p;
 }
 
 /**

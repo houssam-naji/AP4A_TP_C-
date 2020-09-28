@@ -27,11 +27,11 @@ class Server
 {
     public:
         Server();
-        Server(const Server& server);
+        Server(const Server& server_p);
         virtual ~Server();
-        Server& operator=(const Server& serverSource);
-        friend std::ostream& operator<<(std::ostream& output, const Server& server);
-        friend std::ofstream& operator<<(std::ofstream& file, const Server& server);
+        Server& operator=(const Server& server_p);
+        friend std::ostream& operator<<(std::ostream& output_p, const Server& server_p);
+        friend std::ofstream& operator<<(std::ofstream& file_p, const Server& server_p);
 
     protected:
 
