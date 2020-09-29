@@ -7,47 +7,59 @@ using namespace std;
 //constructeur
 Server::Server()
 {
-  this.consolActivation = 0;
-  this.logActivation = 0;
+  this->consolActivation = 0;
+  this->logActivation = 0;
 }
 
 //constructeur de recopie
 Server::Server(const Server& autreObjet)
 {
-  this.consolActivation = autreObjet.consolActivation;
-  this.logActivation = autreObjet.logActivation;
+  this->consolActivation = autreObjet.consolActivation;
+  this->logActivation = autreObjet.logActivation;
 }
 
 //destructeur
 Server::~Server()
 {
-  delete this.consolActivation;
-  delete this.logActivation;
+
 }
 
-//surcharge =
-Server::Server& operator=(const Server& S)
+//methode pour obtenir valeur de consolActivation
+bool Server::getConsolActivation() const
 {
-  if(this!=&S)
-  {
-    this.consolActivation = S.consolActivation;
-    this.logActivation = S.logActivation;
-    return (*this);
-  }
+  return this->consolActivation;
+}
+
+//methode pour definir valeur de consolActivation
+void Server::setConsolActivation(bool val)
+{
+  this->consolActivation = val;
+}
+
+//methode pour obtenir valeur de logActivation
+bool Server::getLogActivation() const
+{
+  return this->logActivation;
+}
+
+//methode pour definir valeur de logActivation
+void Server::setLogActivation(bool val)
+{
+  this->logActivation = val;
 }
 
 //surcharge << vers console
 std::ostream& operator<<(std::ostream &output, Server const& S)
 {
 
-  output << "Ecriture console:\nconsolActivation: "<< S.consolActivation <<"\nlogActivation: " << S.logActivation << "\n";
+  output << "Ecriture console:\nconsolActivation: "<< S.getConsolActivation() <<"\nlogActivation: " << S.getLogActivation() << "\n";
   return output;
 }
 
 //surcharge << vers fichier
 std::ofstream& operator<<(std::ofstream &output, Server const& S)
 {
-  output << "Ecriture fichier:\nconsolActivation: "<< S.consolActivation <<"\nlogActivation: " << S.logActivation << "\n";
+  output << "Ecriture fichier:\nconsolActivation: "<< S.getConsolActivation() <<"\nlogActivation: " << S.getLogActivation() << "\n";
   return output;
 }
 
