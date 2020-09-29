@@ -6,14 +6,28 @@ using namespace std;
 
 int main()
 {
-  std::ofstream toFile("output.txt");
-  Server A();
+  std::ofstream outputFile("output.txt", ios::out | ios::trunc);
+
+  class Server A;
+
+  A.setConsolActivation(1);
+  A.setLogActivation(0);
 
   //ecriture console
-  std::cout<<"Server A: "<<A<<"\n";
+  std::cout<<A, "\n";
 
-  //ecriture fichier
-  toFile<<"Server A: "<<A<<"\n";
+  //si outputFile bien créé
+  if(outputFile)
+  {
+    //ecriture fichier
+    outputFile<<A, "\n";
+    outputFile.close();
+  }
+  else
+  {
+    std::cout<<"Erreur de création de outputFile, ecriture fichier impossible\n";
+  }
+
 
   return 0;
 }
