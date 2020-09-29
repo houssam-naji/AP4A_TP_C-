@@ -51,35 +51,6 @@ Serveur& Serveur::operator=(const Serveur& s)
 	return *this;
 }
 
-Serveur& Serveur::operator<<(std::string outtext)
-{
-	if(getM_ConsolActivation())
-	{
-		std::cout << outtext << "\n";
-	}
-	return *this;
-}
-
-Serveur& Serveur::operator<<(const int& typeexemple)
-{
-	if(getM_logActivation())
-	{
-		std::ofstream file;
-		file.open("soundlog.txt",std::ios::app);
-		
-		if(file.is_open())
-		{
-			file << typeexemple << std::endl;
-			file.close();
-		
-		}
-		else
-		{
-			std::cout << "Failed to open the file \n";
-		}
-	}
-	return *this;
-}
 
 bool Serveur::getM_ConsolActivation()
 {

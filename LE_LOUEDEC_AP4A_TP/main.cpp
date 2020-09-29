@@ -8,8 +8,10 @@ int main ()
 	Serveur test;
 	Serveur test2 = Serveur(true,true);
 	test = test2;
-	test2 << "ToPrintInConsole\n";
-	test2 << 43;
+	std::cout <<test2;
+	std::ofstream file;
+	file.open("soundlog.txt",std::ios::app);
+	file << test2;
 	return 0;
 
 

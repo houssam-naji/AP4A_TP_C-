@@ -29,10 +29,23 @@ public:
 	bool getM_ConsolActivation();
 	bool getM_LogActivation();
 
+	/**
+	* @brief  constructeur par defaut de Serveur.
+	* 
+	*/
 	Serveur(); // constructeur par defaut
 	
+	/**
+	* @brief  Constructeur par recopie. 
+	*
+	* @param Serveur& s le Serveur que l'on va copier.
+	*/
 	Serveur(const Serveur& s); // constructeur par recopie
 	
+	/**
+	* @brief  Destructeur
+	*
+	*/
 	~Serveur(); // destructeur
 	
 	
@@ -45,17 +58,49 @@ public:
 	
 	/**
 	* @brief  surcharge sur << qui correspond a un affichage console
-	*@return un objet de type Serveur 
-	*@param la chaine de characteres que l'on veut afficher
+	*@return un ostream qui correspond a ce qu'on a affiche
+	*@param le ostream d'affichage et l'objet serveur que l'on veut envoyer dans la console.
 	*/
-	Serveur& operator<<(std::string myString);
+	friend std::ostream& operator<<(std::ostream& os, const Serveur& s)
+	{
+		if(s.m_consolActivation)
+		{
+			os << "Valeur de m_consolActivation : " << s.m_consolActivation << "\n" << "Valeur de m_logActivation :" << s.m_logActivation << "\n";
+		
+		}
+		else
+		{
+		
+			os << "consolActivation false : affichage console interdit\n";
+		
+		}
+		return os;
+	
+	
+	}
 	
 		/**
 	* @brief  surcharge sur << qui correspond a une ecriture dans un fichier
 	*@return un objet de type Serveur 
 	*@param un entier qui sera ecrit.
 	*/
-	Serveur& operator<<(const int& typeexemple);
+	friend std::ofstream& operator<< (std::ofstream& file, const Serveur& s)
+	{
+		if(s.m_logActivation)
+		{
+			if(file.is_open())
+			{
+				file << s.m_consolActivation << std::endl << s.m_logActivation;
+				file.close();
+			}
+			else
+			{
+				std::cout << "Failed to read the file \n";
+			}	
+		}
+	
+		return file;
+	}
 	
 
 
