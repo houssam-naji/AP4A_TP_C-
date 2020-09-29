@@ -1,1 +1,3 @@
-Server A: 1
+Ecriture fichier:
+consolActivation: 1
+logActivation: 0
