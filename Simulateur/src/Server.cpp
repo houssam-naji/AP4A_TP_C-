@@ -3,19 +3,20 @@
  * @author RICHARD Antoine
  * @file Server.cpp
  * @date 24/09/2020
- * @brief La classe Server permet de recevoir, de stocker et d'afficher les données
- *        envoyés provenant des capteurs de la cabine de l'avion.
+ * @brief La classe Server permet de recevoir, de stocker et d'afficher les donnÃ©es
+ *        envoyÃ©s provenant des capteurs de la cabine de l'avion.
  *
  */
+
 
 
 #include "../include/Server.hpp"
 
 /**
 *
-* @brief Constructeur par défaut de la classe. Initialise les attributs.
+* @brief Constructeur par dÃ©faut de la classe. Initialise les attributs.
 * @return Aucun retour.
-* @param Aucun paramètre.
+* @param Aucun paramÃ¨tre.
 *
 */
 Server::Server() : m_consolActivation(true), m_logActivation(true)
@@ -27,7 +28,7 @@ Server::Server() : m_consolActivation(true), m_logActivation(true)
 *
 * @brief Constructeur par copie de la classe.
 * @return Aucun retour.
-* @param server_p : Référence sur l'objet à copier.
+* @param server_p : RÃ©fÃ©rence sur l'objet Ã  copier.
 *
 */
 Server::Server(const Server& server_p)
@@ -42,7 +43,7 @@ Server::Server(const Server& server_p)
 * @brief Surcharge de l'operateur d'affectation.
 *        Copie le contenu d'un objet dans l'objet courrant.
 * @return *this L'objet appelant.
-* @param serverSource : Référence sur l'objet dont le contenu va être copié.
+* @param serverSource : RÃ©fÃ©rence sur l'objet dont le contenu va Ãªtre copiÃ©.
 *
 */
 Server& Server::operator=(const Server& server_p)
@@ -57,9 +58,9 @@ Server& Server::operator=(const Server& server_p)
 *
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers la console.
-* @return output_p: Référence sur un objet ostream.
-* @param output_p: Référence sur un objet ostream.
-* @param server_p: Objet de la classe Server pour lequel on veut afficher les données.
+* @return output_p: RÃ©fÃ©rence sur un objet ostream.
+* @param output_p: RÃ©fÃ©rence sur un objet ostream.
+* @param server_p: Objet de la classe Server pour lequel on veut afficher les donnÃ©es.
 *
 */
 std::ostream& operator<<(std::ostream& output_p, const Server& server_p)
@@ -72,9 +73,9 @@ std::ostream& operator<<(std::ostream& output_p, const Server& server_p)
 *
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers un fichier.
-* @return file_p: Référence sur un objet ofstream.
-* @param file_p: Référence sur un objet ofstream.
-* @param server_p: Objet de la classe Server pour lequel on veut logger les données.
+* @return file_p: RÃ©fÃ©rence sur un objet ofstream.
+* @param file_p: RÃ©fÃ©rence sur un objet ofstream.
+* @param server_p: Objet de la classe Server pour lequel on veut logger les donnÃ©es.
 *
 */
 std::ofstream& operator<<(std::ofstream& file_p, const Server& server_p)
@@ -86,9 +87,9 @@ std::ofstream& operator<<(std::ofstream& file_p, const Server& server_p)
 
 /**
 *
-* @brief déstructeur de la classe
+* @brief dÃ©structeur de la classe
 * @return aucun retour
-* @param aucun paramètre.
+* @param aucun paramÃ¨tre.
 *
 */
 Server::~Server()

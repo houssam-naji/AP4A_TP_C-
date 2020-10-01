@@ -1,6 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include "../include/Server.hpp"
+#include "../include/Sensor.hpp"
+#include "../include/Light.hpp"
+#include "../include/Humidity.hpp"
+#include "../include/Sound.hpp"
+#include "../include/Temperature.hpp"
+
 
 using namespace std;
 
@@ -8,13 +14,17 @@ int main()
 {
     cout << "Le simulateur est pret ! \n" << endl;
 
-    Server server; // création d'un objet Server
+    Server server; // crÃ©ation d'un objet Server
 
-    cout << server; // appelle de la surchage de l'opérateur << qui affiche dans la console
+    cout << server; // appelle de la surchage de l'opÃ©rateur << qui affiche dans la console
 
-    ofstream myfile("log.txt", ios::app); // création ou ouverture du fichier / ios::app permet d'écrire à la fin du fichier sans effacer son contenu
-    myfile << server; // appelle de la surchage de l'opérateur << qui écrit dans un fichier
+    ofstream myfile("log.txt", ios::app); // crÃ©ation ou ouverture du fichier / ios::app permet d'Ã©crire Ã  la fin du fichier sans effacer son contenu
+    myfile << server; // appelle de la surchage de l'opÃ©rateur << qui Ã©crit dans un fichier
     myfile.close(); // fermeture du fichier
 
+    Light light;
+    cout << "donnÃ©es du capteur: " << light.getData() << endl;
+
+    
     return 0;
 }
