@@ -31,6 +31,9 @@ class Server
         virtual ~Server();
         Server& operator=(const Server& server_p);
 
+        void fileWrite(std::ofstream& file_p) const;
+        void consolWrite(std::ostream& output_p) const;
+
         // déclaration de fonctions amies (friend) pour qu'elles puissent accéder aux attributs privés de la classe
         friend std::ostream& operator<<(std::ostream& output_p, const Server& server_p);
         friend std::ofstream& operator<<(std::ofstream& file_p, const Server& server_p);

@@ -56,6 +56,18 @@ Server& Server::operator=(const Server& server_p)
 
 /**
 *
+* @brief Ecrit dans la console.
+* @return void
+* @param output_p: Référence sur un objet ostream.
+*
+*/
+void Server::consolWrite(std::ostream& output_p) const
+{
+    output_p << "-- CONSOLE : donnees des capteurs: consolActivation = " << this->m_consolActivation << ", logActivation = " << this->m_logActivation << std::endl;
+}
+
+/**
+*
 * @brief Surcharge de l'operateur <<.
 *        Redirige vers la console.
 * @return output_p: Référence sur un objet ostream.
@@ -65,8 +77,20 @@ Server& Server::operator=(const Server& server_p)
 */
 std::ostream& operator<<(std::ostream& output_p, const Server& server_p)
 {
-    output_p << "-- CONSOLE : donnees des capteurs: consolActivation = " << server_p.m_consolActivation << ", logActivation = " << server_p.m_logActivation << std::endl ;
+    server_p.consolWrite(output_p);
     return output_p;
+}
+
+/**
+*
+* @brief Ecrit dans un fichier.
+* @return void
+* @param file_p: Référence sur un objet ofstream.
+*
+*/
+void Server::fileWrite(std::ofstream& file_p) const
+{
+    file_p << "-- LOG : donnees des capteurs: consolActivation = " << this->m_consolActivation << ", logActivation = " << this->m_logActivation << std::endl;
 }
 
 /**
@@ -80,8 +104,7 @@ std::ostream& operator<<(std::ostream& output_p, const Server& server_p)
 */
 std::ofstream& operator<<(std::ofstream& file_p, const Server& server_p)
 {
-
-    file_p << "-- LOG : donnees des capteurs: consolActivation = " << server_p.m_consolActivation << ", logActivation = " << server_p.m_logActivation << std::endl;
+    server_p.fileWrite(file_p);
     return file_p;
 }
 
