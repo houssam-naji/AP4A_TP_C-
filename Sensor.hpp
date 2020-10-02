@@ -2,36 +2,45 @@
  *@author Hugo Audran
  *@file Sensor.hpp
  *@date 20/09/2020
- *@brief Header de la classe sensor ayant pour but de récolter les données des class Humidity, Temperature, Sound et Light afin de les transmettre au serveur.
+ *@brief Header de la classe sensor classe mère de Humidity, Temperature, Sound, Light
  */
 
+ // Define guards
 #ifndef SENSOR_HPP_INCLUDED
 #define SENSOR_HPP_INCLUDED
-#include "Humidity.hpp"
-#include "Light.hpp"
-#include "Sound.hpp"
-#include "Temperature.hpp"
+#include "cstdlib"
 
 /**
 *@class Sensor
-*@brief Class Server contenant une forme canonique de Coplien et dont l'objectif est de récolter les données pour les renvoyer au serveur.
+*@brief Class Sensor contenant une forme canonique de Coplien et dont l'objectif est de récolter les données pour les renvoyer au serveur.
 */
 
 class Sensor
 {
-public:
-    float m_temperature ; ///< Temperature à bord de l'avion provenant de la classe Temperature.
-    float m_humidity; ///< Taux d'humidité à bord de l'avion provenant de la classe Humidity.
-    int m_sound; ///<  Puissance sonore à bord de l'avion provenant de la Sound.
-    bool m_light; ///< Lumière allumée ou éteinte à bord de l'avion
+protected:
 
+public:
     // Définition de la forme canonique
     Sensor();
-    Sensor (float temperature, float humidity, int sound, bool light); // Constructeur paramétré
     Sensor(const Sensor&);
-    ~Sensor();
+    virtual ~Sensor();
     Sensor &operator=(const Sensor&);
 
+    /**
+    *@brief Getter virtuel pour récupérer une donnée sous la forme de float dans une des classes filles de Sensor (Humidity,Temperature,Light,Sound)
+    *@return float
+    *@param None
+    */
+
+    virtual float getData();
+
+    /**
+    *@brief Méthode virtuelle permettant aux classes capteurs filles de Sensor de générer un nombre aléatoire et de l'affecter à un de ses attributs.
+    *@return void
+    *@param None
+    */
+
+    virtual void aleaGenVal();
 };
 
 #endif // SENSOR_HPP_INCLUDED

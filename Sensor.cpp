@@ -2,7 +2,7 @@
  *@author Hugo Audran
  *@file Server.hpp
  *@date 20/09/2020
- *@brief Implementation de la classe sensor ayant pour but de collecter les données au seins de l'avion.
+ *@brief Implementation de la classe sensor classe mère de Temperature, Humidity, Sound et Light
  */
 
 #include <iostream>
@@ -10,24 +10,22 @@
 
 using namespace std;
 
-Sensor::Sensor (float temperature, float humidity, int sound, bool light): m_temperature(temperature), m_humidity(humidity), m_sound(sound), m_light(light)
-{
-}
-
 Sensor::Sensor(){}
 
-Sensor::Sensor(const Sensor&){}
+Sensor::Sensor(const Sensor&){} /// Inutile sensor n'a aucun attribut dans mon programme, est défini pour éviter les erreurs de compilation
 
 Sensor::~Sensor(){}
 
-Sensor & Sensor::operator=(const Sensor &  sensor_)
+Sensor& Sensor::operator=(const Sensor &  sensor_)
 {
-    if (&sensor_ != this)
-    {
-        m_temperature = sensor_.m_temperature;
-        m_humidity= sensor_.m_humidity;
-        m_sound = sensor_.m_sound;
-        m_light = sensor_.m_light;
-    }
-    return *this;
+    return *this;               /// Comme précédemment, il n'y a rien à recopier/affecter
 }
+
+float Sensor::getData()
+{
+    return 0;    /// La fonction est redéfinie par chaque classe fille
+}
+
+void Sensor::aleaGenVal()
+{
+}               /// La fonction est redéfinie par chaque classe fille
