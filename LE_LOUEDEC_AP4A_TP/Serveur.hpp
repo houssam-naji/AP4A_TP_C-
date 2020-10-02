@@ -61,20 +61,20 @@ public:
 	*@return un ostream qui correspond a ce qu'on a affiche
 	*@param le ostream d'affichage et l'objet serveur que l'on veut envoyer dans la console.
 	*/
-	friend std::ostream& operator<<(std::ostream& os, const Serveur& s)
+	friend std::ostream& operator<<(std::ostream& os_p, const Serveur& s_p)
 	{
-		if(s.m_consolActivation)
+		if(s_p.m_consolActivation)
 		{
-			os << "Valeur de m_consolActivation : " << s.m_consolActivation << "\n" << "Valeur de m_logActivation :" << s.m_logActivation << "\n";
+			os_p << "Valeur de m_consolActivation : " << s_p.m_consolActivation << "\n" << "Valeur de m_logActivation :" << s_p.m_logActivation << "\n";
 		
 		}
 		else
 		{
 		
-			os << "consolActivation false : affichage console interdit\n";
+			os_p << "consolActivation false : affichage console interdit\n";
 		
 		}
-		return os;
+		return os_p;
 	
 	
 	}
@@ -84,14 +84,14 @@ public:
 	*@return un objet de type Serveur 
 	*@param un entier qui sera ecrit.
 	*/
-	friend std::ofstream& operator<< (std::ofstream& file, const Serveur& s)
+	friend std::ofstream& operator<< (std::ofstream& file_p, const Serveur& s_p)
 	{
-		if(s.m_logActivation)
+		if(s_p.m_logActivation)
 		{
-			if(file.is_open())
+			if(file_p.is_open())
 			{
-				file << s.m_consolActivation << std::endl << s.m_logActivation;
-				file.close();
+				file_p << s_p.m_consolActivation << std::endl << s_p.m_logActivation;
+				file_p.close();
 			}
 			else
 			{
@@ -99,7 +99,7 @@ public:
 			}	
 		}
 	
-		return file;
+		return file_p;
 	}
 	
 

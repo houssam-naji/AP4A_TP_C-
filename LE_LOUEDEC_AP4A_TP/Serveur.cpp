@@ -22,30 +22,30 @@ Serveur::~Serveur()
 	delete &m_logActivation;
 }
 
-Serveur::Serveur(bool cons,bool log)
+Serveur::Serveur(bool cons_p,bool log_p)
 {
-	this->m_consolActivation = cons;
-	this->m_consolActivation = log;
+	this->m_consolActivation = cons_p;
+	this->m_consolActivation = log_p;
 	
 }
 
 
-Serveur::Serveur(const Serveur& s) 
+Serveur::Serveur(const Serveur& s_p) 
 {
-	if (this != &s )
+	if (this != &s_p )
 	{
-		this->m_consolActivation = s.m_consolActivation;
-		this->m_logActivation = s.m_logActivation;
+		this->m_consolActivation = s_p.m_consolActivation;
+		this->m_logActivation = s_p.m_logActivation;
 	
 	}
 }
 
-Serveur& Serveur::operator=(const Serveur& s)
+Serveur& Serveur::operator=(const Serveur& s_p)
 {
-	if (this != &s )
+	if (this != &s_p )
 	{
-		this->m_consolActivation = s.m_consolActivation;
-		this->m_logActivation = s.m_logActivation;
+		this->m_consolActivation = s_p.m_consolActivation;
+		this->m_logActivation = s_p.m_logActivation;
 	}
 	
 	return *this;
