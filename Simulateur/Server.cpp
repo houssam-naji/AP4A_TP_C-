@@ -5,7 +5,7 @@
  * @brief
  */
 
-#include "../include/Server.hpp"
+#include "Server.hpp"
 #include <iostream>
 #include <fstream>
 #include <clocale>
@@ -49,7 +49,7 @@ void Server::m_dataRcv(Sensor sensors[3])
 	light = sensors[2];
 	sound = sensors[3];
 
-	char answer = '';
+	char answer = ' ';
 
 	while (std::toupper(answer) != 'O' && std::toupper(answer) != 'N')
 	{
@@ -66,7 +66,7 @@ void Server::m_dataRcv(Sensor sensors[3])
 		Server::logActivation = false;
 	}
 
-	answer = '';
+	answer = ' ';
 
 	while (std::toupper(answer) != 'O' && std::toupper(answer) != 'N')
 		{
@@ -88,7 +88,7 @@ void Server::m_fileWrite(std::ofstream& file) const
 {
 	if (Server::logActivation)
 	{
-		file << sensor.getName() << " : " << sensor.getData();
+		file << "sensor.getName() << "  " << sensor.getData()";
 	}
 }
 
@@ -96,7 +96,7 @@ void Server::m_consolWrite(std::ostream& console) const
 {
 	if (Server::consolActivation)
 	{
-		console << sensor.getName() << " : " << sensor.getData();
+		console << "sensor.getName() << "  " << sensor.getData()";
 	}
 }
 

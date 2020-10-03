@@ -13,7 +13,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "../include/Sensor.hpp"
+#include "Sensor.hpp"
 
 /*
  * @class Server
