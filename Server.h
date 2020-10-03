@@ -32,10 +32,10 @@ class Server
         void afficherServer();
         
         //redirection console
-        void consolWrite(std::ostream& flux);
+        void consolWrite(std::ostream& flux) const;
 
         //redirection file
-        void fileWrite(std::ofstream& flux);
+        void fileWrite(std::ofstream& flux) const;
 
         //operator affectation
         Server operator=(const Server& server);
