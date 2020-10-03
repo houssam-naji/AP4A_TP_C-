@@ -32,7 +32,7 @@ public:
     * @brief créé une nouvelle instance de la classe Server par copie d'un autre server
     * @param const Server& : référence vers l'instance de la classe Server à copier
     */
-    Server(Server const &serv);
+    Server(Server const& serv_p);
 
     /**
     * @brief destructeur

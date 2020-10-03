@@ -17,10 +17,10 @@ Server::Server()
     this->m_logActivation = true;
 }
 
-Server::Server(Server const &serv)
+Server::Server(Server const& serv_p)
 {
-    this->m_consolActivation = serv.m_consolActivation;
-    this->m_logActivation = serv.m_logActivation;
+    this->m_consolActivation = serv_p.m_consolActivation;
+    this->m_logActivation = serv_p.m_logActivation;
 }
 
 Server::~Server()
@@ -28,37 +28,37 @@ Server::~Server()
 
 }
 
-void Server::fileWrite(ofstream& file) const
+void Server::fileWrite(ofstream& file_p) const
 {
-    file << "log activation " << m_logActivation << ", console activation " <<  m_consolActivation; 
+    file_p << "log activation " << m_logActivation << ", console activation " <<  m_consolActivation; 
 }
 
 
-void Server::consolWrite(ostream& output) const
+void Server::consolWrite(ostream& output_p) const
 {
-    output << "log activation " << m_logActivation << ", console activation " <<  m_consolActivation; 
+    output_p << "log activation " << m_logActivation << ", console activation " <<  m_consolActivation; 
 }
 
-Server& Server::operator=(const Server& serv)
+Server& Server::operator=(const Server& serv_p)
 {
-    if (this != &serv)
+    if (this != &serv_p)
     {
-        this->m_logActivation = serv.m_logActivation;
-        this->m_consolActivation = serv.m_consolActivation;
+        this->m_logActivation = serv_p.m_logActivation;
+        this->m_consolActivation = serv_p.m_consolActivation;
     }
 
     return *this;
 
 }
 
-ostream& operator<<(ostream& output, const Server& source) 
+ostream& operator<<(ostream& output_p, const Server& source_p) 
 { 
-    source.consolWrite(output);
-    return output;            
+    source_p.consolWrite(output_p);
+    return output_p;            
 }
 
-ofstream& operator<<(ofstream& output, const Server& source) 
+ofstream& operator<<(ofstream& output_p, const Server& source_p) 
 { 
-    source.fileWrite(output);
-    return output;            
+    source_p.fileWrite(output_p);
+    return output_p;            
 }
