@@ -20,8 +20,11 @@ int main()
 	/******************affichage**********************/
 	cout << "---------1 er Server----------" << endl;
 	//server_1.afficherServer(); //affichage normal
+	cout<<server_1;
+
 	cout << "---------2 eme Server---------" << endl;
 	//server_2.afficherServer(); //affichage normal
+	cout<<server_2;
 
 	
 	/******************affectation**********************/
@@ -38,10 +41,11 @@ int main()
     /******************affichage**********************/
     cout << "---------1 er Server----------" << endl;
 	//server_1.afficherServer(); //affichage normal
+	cout<<server_1;
 	cout << "---------2 eme Server---------" << endl;
 	//server_2.afficherServer(); //affichage normal
-    
+    cout<<server_2;
 
-    //fichier << server_1; // redirection fichier
+    fichier<<"server 1" << server_1; // redirection fichier
   return 0;
 }
