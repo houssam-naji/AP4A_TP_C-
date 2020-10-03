@@ -25,14 +25,14 @@ void Server::afficherServer()
 }
 
 //redirection console
-void Server::consolWrite(ostream& flux )
+void Server::consolWrite(ostream& flux ) const
 {
 	flux << "Consol Activation : " << m_consolActivation << endl;
     flux << "Log Activation : " << m_logActivation << endl;
 
 }
 //redirection file
-void Server::fileWrite(ofstream& flux)
+void Server::fileWrite(ofstream& flux) const
 {
 	flux << "Consol Activation : " << m_consolActivation << endl;
     flux << "Log Activation : " << m_logActivation << endl;
