@@ -53,7 +53,7 @@ void Server::m_dataRcv(Sensor sensors[3])
 
 	while (std::toupper(answer) != 'O' && std::toupper(answer) != 'N')
 	{
-		cout << "Voulez-vous stocker les donnÃ©es dans un fichier ?" << endl;
+		cout << "Voulez-vous stocker les données dans un fichier ?" << endl;
 		cin << answer;
 	}
 
@@ -70,7 +70,7 @@ void Server::m_dataRcv(Sensor sensors[3])
 
 	while (std::toupper(answer) != 'O' && std::toupper(answer) != 'N')
 		{
-			cout << "Voulez-vous afficher les donnÃ©es dans la console ?" << endl;
+			cout << "Voulez-vous afficher les données dans la console ?" << endl;
 			cin << answer;
 		}
 
