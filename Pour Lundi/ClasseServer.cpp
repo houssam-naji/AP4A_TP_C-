@@ -31,23 +31,23 @@ bool Server::getLight()
   return s_light;
 }
 
-Server& Server::operator=(const Server& Copie_Server)
+Server& Server::operator=(const Server& p_Copie_Server)
 {
-  this->s_temperature=Copie_Server.s_temperature;
-  this->s_humidity=Copie_Server.s_humidity;
-  this->s_sound=Copie_Server.s_sound;
-  this->s_light=Copie_Server.s_light;
+  this->s_temperature=p_Copie_Server.s_temperature;
+  this->s_humidity=p_Copie_Server.s_humidity;
+  this->s_sound=p_Copie_Server.s_sound;
+  this->s_light=p_Copie_Server.s_light;
   return(*this);
 }
 
-std::ostream& operator<<(std::ostream& os, Server& LeServ)
+std::ostream& operator<<(std::ostream& p_os, Server& p_LeServ)
 {
-  os << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
-  return os;
+  p_os << "Temperature : " << p_LeServ.getTemperature() << " Humidité : " << p_LeServ.getHumidity() << " Son : " << p_LeServ.getSound() << " Lumière : " << p_LeServ.getLight()<< "\n";
+  return p_os;
 }
 
-std::ofstream& operator<<(std::ofstream& out , Server& LeServ)
+std::ofstream& operator<<(std::ofstream& p_out , Server& p_LeServ)
 {
-  out << "Temperature : " << LeServ.getTemperature() << " Humidité : " << LeServ.getHumidity() << " Son : " << LeServ.getSound() << " Lumière : " << LeServ.getLight()<< "\n";
-  return out;
+  p_out << "Temperature : " << p_LeServ.getTemperature() << " Humidité : " << p_LeServ.getHumidity() << " Son : " << p_LeServ.getSound() << " Lumière : " << p_LeServ.getLight()<< "\n";
+  return p_out;
 }

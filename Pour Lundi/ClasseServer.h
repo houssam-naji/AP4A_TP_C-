@@ -32,9 +32,9 @@ class Server
 	 * @param float qui transmet sa valeur à la variable s_temperature
 	 * @return void
 	 */
-	void setTemperature(float t) //Fonction pour entrer une valeur pour la température (dans le code)
+	void setTemperature(float p_t) //Fonction pour entrer une valeur pour la température (dans le code)
 	{
-	  s_temperature=t;
+	  s_temperature=p_t;
 	}
 
 	/**
@@ -42,9 +42,9 @@ class Server
 	 * @param float qui transmet sa valeur à la variable s_humidity
 	 * @return void
 	 */
-	void setHumidity(float h) //Fonction pour entrer une valeur pour l'humidité (dans le code)
+	void setHumidity(float p_h) //Fonction pour entrer une valeur pour l'humidité (dans le code)
 	{
-	  s_humidity=h;
+	  s_humidity=p_h;
 	}
 
 	/**
@@ -52,9 +52,9 @@ class Server
 	 * @param int qui transmet sa valeur à la variable s_sound
 	 * @return void
 	 */
-	void setSound(int s) //Fonction pour entrer une valeur pour le son (dans le code)
+	void setSound(int p_s) //Fonction pour entrer une valeur pour le son (dans le code)
 	{
-	  s_sound=s;
+	  s_sound=p_s;
 	}
 
 	/**
@@ -62,9 +62,9 @@ class Server
 	 * @param bool qui transmet sa valeur à la variable s_light
 	 * @return void
 	 */
-	void setLight(bool l) //Fonction pour entrer une valeur pour la lumière (dans le code)
+	void setLight(bool p_l) //Fonction pour entrer une valeur pour la lumière (dans le code)
 	{
-	  s_light=l;
+	  s_light=p_l;
 	}
 
 	/**
