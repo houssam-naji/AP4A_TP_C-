@@ -33,6 +33,8 @@ Server& Server::operator=(const Server& server_p)
 {
     this->m_consoleActivation=server_p.m_consoleActivation;
     this->m_logActivation=server_p.m_logActivation;
+    this->m_dataRcv=server_p.m_dataRcv;
+    this->m_choice=server_p.m_choice;
     return *this;
 }
 
@@ -52,7 +54,7 @@ void Server::fileWrite(std::ofstream& fileFlux_p) const
 {
     if (this->m_logActivation)
     {
-        fileFlux_p<<"Server 1:\n"<<this->m_dataRcv<<std::endl;
+        fileFlux_p<<"Server 1 (potentiel formatage différent de celui de consoleWrite):\n"<<this->m_dataRcv<<std::endl;
     }
 }
 
