@@ -19,17 +19,17 @@ using namespace std;
 
 int main()
 {
-    Server a,b;
-    a=b;
-    Server* c = new Server(a);
-    cout << a << endl;
+  Server a,b;
+  a=b;
+  Server* c = new Server(a);
+  cout << a << endl;
 
-    ofstream fichier;
-    fichier.open("mesures.log");
-    fichier << a << endl;
-    fichier.close();
+  ofstream fichier;
+  fichier.open("mesures.log");
+  fichier << a << endl;
+  fichier.close();
     
-    return 0;
+  return 0;
 }
 
 #endif
