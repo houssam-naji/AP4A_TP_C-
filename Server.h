@@ -25,25 +25,25 @@ class Server
         //constructeur par defaut
         Server();
         //constructeur
-        Server(bool consolActivation , bool logActivation );
+        Server(bool consolActivation_p , bool logActivation_p );
         //destructeur
         ~Server();
         //afficher server
         void afficherServer();
         
         //redirection console
-        void consolWrite(std::ostream& flux) const;
+        void consolWrite(std::ostream& flux_p) const;
 
         //redirection file
-        void fileWrite(std::ofstream& flux) const;
+        void fileWrite(std::ofstream& flux_p) const;
 
         //operator affectation
-        Server operator=(const Server& server);
+        Server operator=(const Server& server_p);
 
 };
     //operator redirection console
-     std::ostream& operator<<(std::ostream& flux, const Server& server );
+     std::ostream& operator<<(std::ostream& flux_p, const Server& server_p );
     //operator redirection file
-     std::ofstream& operator<<(std::ofstream& flux, const Server& server);
+     std::ofstream& operator<<(std::ofstream& flux_p, const Server& server_p);
 
 #endif // SERVER_H_INCLUDED
