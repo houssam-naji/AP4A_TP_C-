@@ -43,11 +43,12 @@ void Server::operator<<(char* data_p) const {
     //On écrit dans le fichier de log et on affiche également dans la console la donnée
     std::cout << data_p; //Console
     //Fichier
-
+    std::ofstream file;
+    file.open(m_fileName);
+    file << data_p;
   } else if (this->m_logActivation) {
-    //On écrit seulement dans le fichier de log la donnée
+    //On écrit seulement dans le fichier
 
-    //Récupération du nom du fichier et des données
     std::ofstream file;
     file.open(m_fileName);
     file << data_p;
