@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1601826794 source:c:\users\allan\desktop\utbm\a2020\ap4a ap4b\github\server\ap4a_tp_c-\project_ap4a_acaron\main.cpp
+	"Server.h"
+	<iostream>
+
+1601826780 source:c:\users\allan\desktop\utbm\a2020\ap4a ap4b\github\server\ap4a_tp_c-\project_ap4a_acaron\src\server.cpp
+	"Server.h"
+	<iostream>
+
+1601827190 c:\users\allan\desktop\utbm\a2020\ap4a ap4b\github\server\ap4a_tp_c-\project_ap4a_acaron\include\server.h
+	<string>
+	<iostream>
+
