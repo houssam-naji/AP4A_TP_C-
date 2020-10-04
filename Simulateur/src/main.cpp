@@ -6,6 +6,7 @@
 #include "../include/Humidity.hpp"
 #include "../include/Sound.hpp"
 #include "../include/Temperature.hpp"
+#include "../include/Scheduler.hpp"
 
 
 using namespace std;
