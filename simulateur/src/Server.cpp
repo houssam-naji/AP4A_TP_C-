@@ -7,6 +7,7 @@ provenant des capteurs de la cabine de l’avion.
 */
 
 #include "../headers/Server.hpp"
+using namespace std;
 
 Server::Server()
 {
