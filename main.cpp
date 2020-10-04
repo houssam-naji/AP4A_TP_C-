@@ -49,3 +49,4 @@ int main()
     fichier<<"server 1" << server_1; // redirection fichier
   return 0;
 }
+ 
