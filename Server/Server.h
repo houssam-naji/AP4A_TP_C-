@@ -2,7 +2,7 @@
  * @author mcoulmeau
  * @file Server.hpp
  * @date 28/09/2020
- * @brief Implementation of operator= and << overload
+ * @brief Receive, save and display data send by sensors
  */
 
 
@@ -17,12 +17,23 @@
 class Server
 {
 private:
-    bool m_consoleActivation;
-    bool m_logActivation;
-    int m_choice;
-    std::string m_dataRcv;
+    bool m_consoleActivation; ///<state of console activation
+    bool m_logActivation; ///< state of log activation
+    int m_choice; ///< choice input by user
+    std::string m_dataRcv; ///< data receive with dataRcv()
 
+    /**
+    * @brief write to console
+    * @param consoleFlux_p
+    * @return void
+    */
     void consoleWrite(std::ostream& consoleFlux_p) const;
+
+    /**
+    * @brief write to log file
+    * @param fileFlux_p
+    * @return void
+    */
     void fileWrite(std::ofstream& fileFlux_p) const;
 
 public:
@@ -37,26 +48,30 @@ public:
     
     /**
     * @brief Operator= overload
-    * @brief Operator= overload
-    * @param objet
+    * @param server_p
     * @return Server&
     */
-    Server& operator=(const Server& objet);
+    Server& operator=(const Server& server_p);
     
     /**
     * @brief Operator<< overload (output to console)
-    * @param objet
-    * @return Server&
+    * @param consoleFlux_p,server_p
+    * @return std::ostream&
     */
     friend std::ostream& operator<<(std::ostream& consoleFlux_p, const Server& server_p);
     
     /**
     * @brief Operator<< overload (output to file)
-    * @param objet
-    * @return Server&
+    * @param fileFlux_p,server_p
+    * @return std::ostream&
     */
     friend std::ofstream& operator<<(std::ofstream& fileFlux_p, const Server& server_p);
 
+    /**
+    * @brief Receive data from sensor and choice from user
+    * @param sensor_p
+    * @return void
+    */
     void dataRcv(Sensor sensor_p);
 };
 

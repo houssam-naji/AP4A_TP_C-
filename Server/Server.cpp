@@ -1,14 +1,13 @@
 /**
  * @author mcoulmeau
- * @file Server.cpp
+ * @file Server.hpp
  * @date 28/09/2020
- * @brief Operator= and << overload
+ * @brief Receive, save and display data send by sensors
  */
 
 #include "Server.h"
 #include <iostream>
 
-//Constructeur par default
 Server::Server()
 {
     this->m_choice=0;
@@ -17,7 +16,6 @@ Server::Server()
     this->m_dataRcv="";
 }
 
-//Constructeur par recopie
 Server::Server(const Server& server_p)
 {
     this->m_consoleActivation=server_p.m_consoleActivation;
@@ -26,13 +24,11 @@ Server::Server(const Server& server_p)
     this->m_choice=server_p.m_choice;
 }
 
-//Destructeur
 Server::~Server()
 {
 
 }
 
-//Surcharge de l'opérateur d'affectation
 Server& Server::operator=(const Server& server_p)
 {
     this->m_consoleActivation=server_p.m_consoleActivation;
