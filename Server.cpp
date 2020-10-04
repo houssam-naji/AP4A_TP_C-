@@ -12,7 +12,7 @@
 using namespace std;
 
 // Constructeur Server
-Server::Server(bool consolActivation, bool logActivation ):m_consolActivation(consolActivation),m_logActivation(logActivation){}
+Server::Server(bool consolActivation_p, bool logActivation_p ):m_consolActivation(consolActivation_p),m_logActivation(logActivation_p){}
 //destructeur Server
 Server::~Server(){}
 
@@ -25,35 +25,35 @@ void Server::afficherServer()
 }
 
 //redirection console
-void Server::consolWrite(ostream& flux ) const
+void Server::consolWrite(ostream& flux_p ) const
 {
-	flux << "Consol Activation : " << m_consolActivation << endl;
-    flux << "Log Activation : " << m_logActivation << endl;
+	flux_p << "Consol Activation : " << m_consolActivation << endl;
+    flux_p << "Log Activation : " << m_logActivation << endl;
 
 }
 //redirection file
-void Server::fileWrite(ofstream& flux) const
+void Server::fileWrite(ofstream& flux_p) const
 {
-	flux << "Consol Activation : " << m_consolActivation << endl;
-    flux << "Log Activation : " << m_logActivation << endl;
+	flux_p << "Consol Activation : " << m_consolActivation << endl;
+    flux_p << "Log Activation : " << m_logActivation << endl;
 
 }
 //operator affectation
-Server Server::operator=(const Server& server)
+Server Server::operator=(const Server& server_p)
 {
-    m_consolActivation = server.m_consolActivation;
-    m_logActivation = server.m_logActivation;
-    return server;
+    m_consolActivation = server_p.m_consolActivation;
+    m_logActivation = server_p.m_logActivation;
+    return server_p;
 }
 //operator redirection console
-ostream& operator<<(ostream& flux, const Server& server )
+ostream& operator<<(ostream& flux_p, const Server& server_p )
 {
-    server.consolWrite(flux) ;
-    return flux;
+    server_p.consolWrite(flux_p) ;
+    return flux_p;
 }
 //operator redirection file
-ofstream& operator<<(ofstream& flux, const Server& server)
+ofstream& operator<<(ofstream& flux_p, const Server& server_p)
 {
-    server.fileWrite(flux) ;
-    return flux;
+    server_p.fileWrite(flux_p) ;
+    return flux_p;
 }
