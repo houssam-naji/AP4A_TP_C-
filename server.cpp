@@ -1,35 +1,48 @@
 #include <iostream>
+#include <stdio.h>
 #include "server.h"
 
-inline std::ostream& operator<< (std::ostream & out, const server & server)
+using namespace std;
+
+Server::Server()
 {
-    out << "bool consolActivation : " << server.consolActivation << "\nbool logActivation : " << server.logActivation << "\n" ;
+    this->m_logActivation= false;
+    this->m_consolActivation= false;
+}
+
+Server::Server(const Server& server)
+{
+    this->m_consolActivation=server.m_consolActivation;
+    this->m_logActivation=server.m_logActivation;
+}
+
+Server::~Server()
+{
+
+}
+
+//Server& Server::operator=(const Server&)
+//{
+
+//}
+
+inline std::ostream& operator<< (std::ostream& out, const Server& server)
+{
+    out << "bool consolActivation : " << server.m_consolActivation << "\nbool logActivation : " << server.m_logActivation << "\n";
     return out;
 }
 
-inline std::ofstream& operator<< (std::ofstream & out, const server & server)
+inline std::ofstream& operator<< (std::ofstream& out, const Server& server)
 {
-    out << "bool consolActivation" << server.consolActivation << "bool logActivation" << server.logActivation ;
+    out << "bool consolActivation : " << server.m_consolActivation << "\tbool logActivation :" << server.m_logActivation << "\n";
     return out;
 }
 
-server& server::operator =(const server & server)
+Server& Server::operator =(const Server& server)
 {
-    consolActivation = server.consolActivation;
-    logActivation = server.logActivation;
+    m_consolActivation = server.m_consolActivation;
+    m_logActivation = server.m_logActivation;
     return *this;
 }
 
-int main()
-{
-    class server Test, server;
-    std::ostream consol;
-    std::ofstream file;
-    Test.consolActivation = true;
-    Test.logActivation = true;
 
-    server.operator=(Test);
-    Test.operator<<(consol, Test);
-    Test.operator<<(file, Test);
-
-}
