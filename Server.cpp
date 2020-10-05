@@ -3,6 +3,7 @@
 using namespace std;
 
 #include "Server.hpp"
+#include "Sensor.hpp"
 
 //constructeur
 Server::Server()
@@ -51,32 +52,47 @@ void Server::setLogActivation(bool val)
 //surcharge << vers console
 std::ostream& operator<<(std::ostream &output, Server const& S)
 {
-
-  output << "Ecriture console:\nconsolActivation: "<< S.getConsolActivation() <<"\nlogActivation: " << S.getLogActivation() << "\n";
+  S.consolWrite(output);
   return output;
 }
 
 //surcharge << vers fichier
 std::ofstream& operator<<(std::ofstream &output, Server const& S)
 {
-  output << "Ecriture fichier:\nconsolActivation: "<< S.getConsolActivation() <<"\nlogActivation: " << S.getLogActivation() << "\n";
+  S.fileWrite(output);
   return output;
 }
 
 //Reception données
-// void dataRcv(Server)
-// {
-//
-// }
+void Server::dataRcv(Sensor S)
+{
+  this->dataReceived = S.sensorData;
+}
 
 //Ecriture données dans un fichier de log
-// void fileWrite(Server)
-// {
-//
-// }
+void Server::fileWrite(std::ofstream& fileFlux) const
+{
+  if(this->logActivation)
+  {
+    cout << "Ecriture fichier active(logActivation=1)\n";
+    fileFlux << "Donnée Sensor: " << this->dataReceived << "\n";
+  }
+  else
+  {
+    cout << "Ecriture fichier inactive(logActivation=0)\n";
+  }
+}
 
 //Ecriture données dans la console
-// void consolWrite(Server)
-// {
-//
-// }
+void Server::consolWrite(std::ostream& consolFlux) const
+{
+  if(this->consolActivation)
+  {
+    cout << "Ecriture console active(consolActivation=1)\n";
+    consolFlux << "Donnée Sensor: " << this->dataReceived << "\n";
+  }
+  else
+  {
+    cout << "Ecriture console inactive(consolActivation=0)\n";
+  }
+}

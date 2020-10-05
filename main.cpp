@@ -3,15 +3,24 @@
 using namespace std;
 
 #include "Server.hpp"
+#include "Sensor.hpp"
 
 int main()
 {
   std::ofstream outputFile("output.txt", ios::out | ios::trunc);
 
-  class Server A;
+  Server A;
+  Sensor B;
+  A.dataRcv(B); //Reception des données de B dans A
 
+  cout << "Appel de setConsolActivation(): \n";
   A.setConsolActivation(1);
-  A.setLogActivation(0);
+  cout << "Appel de setLogActivation(): \n";
+  A.setLogActivation(1);
+
+  cout << "Test getConsolActivation: " << A.getConsolActivation() <<"\n";
+  cout << "Test getLogActivation: " << A.getLogActivation() <<"\n";
+
 
   //ecriture console
   std::cout<<A, "\n";

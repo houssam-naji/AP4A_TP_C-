@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <fstream>
+#include "Sensor.hpp"
+
 using namespace std;
 
 class Server
@@ -40,24 +42,25 @@ public:
           }
         }
 
+        //surcharge << vers console
+        friend std::ostream& operator<<(std::ostream &output, Server const& S);
+        //surcharge << vers fichier
+        friend std::ofstream& operator<<(std::ofstream &output, Server const& S);
+
         //Reception données
-        //void dataRcv(Server);
+        void dataRcv(Sensor);
 
 
 private:
         bool consolActivation, logActivation;
+        int dataReceived;
 
         //Ecriture données dans un fichier de log
-        //void fileWrite(Server);
+        void fileWrite(std::ofstream&) const;
 
         //Ecriture données dans la console
-        //void consolWrite(Server);
+        void consolWrite(std::ostream&) const;
 
 };
-
-//surcharge << vers console
-std::ostream& operator<<(std::ostream &output, Server const& S);
-//surcharge << vers fichier
-std::ofstream& operator<<(std::ofstream &output, Server const& S);
 
 #endif // SERVER_H
