@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Constructeur par défaut :
+// Constructeur par dÃ©faut :
 
 Server::Server()
 {
@@ -49,7 +49,7 @@ ofstream operator<<(ofstream &flux, Server const& server){
 }
 
 ostream operator<<(ostream &flux, Server const& server){
-  server.consoleWrite(flux);
+  this->server.consoleWrite(flux);
   flux << endl;
   return flux;
 }
