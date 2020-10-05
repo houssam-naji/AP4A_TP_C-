@@ -21,6 +21,8 @@ int main()
   cout << "- Sound : ";
   cin >> nbSensors[3];
 
+  //TODO: overload scheduler constructor to create sensors arrays (1 type of sensor = 1 array)
+
   sched.processData();
 
   return 0;

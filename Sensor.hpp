@@ -19,17 +19,24 @@ private:
   int m_value; //TODO: use a template to allow use of undetermined types
   int m_minValue;
   int m_maxValue;
+
 public:
   Sensor(/* args */);
-  Sensor(const Sensor& other);
+  Sensor(const Sensor &other);
   Sensor(const int value_p); //TODO: use template
   ~Sensor();
+  /**
+   * @brief getter to access m_value
+   * @return m_value
+   * */
   int getData();
 
 protected:
+  /**
+   * @brief randomly genereates value that matches min and max from sensor type. Called by the constructor
+   * @return randomly generated value
+   * */
   int aleaGenVal();
 };
-
-
 
 #endif // SENSOR_HPP

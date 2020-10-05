@@ -23,14 +23,17 @@ class Scheduler
 {
 private:
   int m_frequency; //in Hertz : a frequency of 2 will result in Scheduler triggering Server 2 times per second
-  test::Server serv;
+  streamOverload::Server serv;
   Sensor test; //TODO: add arrays of sensors for each sensor type
   
 public:
   Scheduler();
   virtual ~Scheduler();
   void setFrequency();
-  //void processData();
+  /**
+   * @brief collect data from sensors and transfer them to the server
+   **/
+  void processData();
 };
 
 #endif //SCHEDULER_HPP
