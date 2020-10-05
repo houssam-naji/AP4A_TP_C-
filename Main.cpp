@@ -3,12 +3,12 @@
 #include "Scheduler.hpp"
 
 using namespace std;
-using namespace test;
+using namespace streamOverload;
 
 int main()
 {
   Scheduler sched;
-  int nbSensors[4]; //number of sensors to deal with, in the following order : temperature, humidity, light, sound
+  int nbSensors[4]; //number of sensors of each type to deal with, in the following order : temperature, humidity, light, sound
 
   sched.setFrequency();
   cout << "Set number of sensors in the airplane : " << endl;
@@ -21,12 +21,7 @@ int main()
   cout << "- Sound : ";
   cin >> nbSensors[3];
 
-  Server testServ;
-  cout << testServ;
-
-  ofstream myFile("dat.txt");;
-  myFile << testServ;
-  myFile.close();
+  sched.processData();
 
   return 0;
 }

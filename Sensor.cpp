@@ -4,14 +4,18 @@
 * @date 26/09/2020
 * @brief Implementation of Sensor base class
 */
+#include <iostream>
 
 #include "Sensor.hpp"
 
-#include <time.h>
+#include <ctime>
 #include <cstdlib>
 
 Sensor::Sensor()
 {
+
+  m_minValue = 0; //TODO: adapt this value to each sensor type
+  m_maxValue = 100; //TODO: adapt this value to each sensor type
   m_value = aleaGenVal();
 }
 
@@ -33,5 +37,12 @@ Sensor::~Sensor()
 int Sensor::aleaGenVal()
 {
   srand(time(0));
-  return m_minValue+rand()%(m_maxValue-m_minValue);
+  int random = m_minValue+rand()%(m_maxValue-m_minValue);
+  std::cout << "RANDOM : " << random;
+  return random;
+}
+
+int Sensor::getData()
+{
+  return m_value;
 }

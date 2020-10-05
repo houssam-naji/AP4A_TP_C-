@@ -15,7 +15,7 @@
 
 using namespace std;
 
-using namespace test;
+using namespace streamOverload;
 
 Server::Server()
 {
@@ -51,7 +51,7 @@ void Server::fileWrite(ofstream &flux) const
 {
   if (m_logActivation)
   { 
-    flux << "Date : XX" << "Temp : " << m_lastTemp << " | Humidity : " << m_lastHumidity << " | Light : " << m_lastLight << " | Sound : " << m_lastSound << endl;
+    flux << "Date : XX/XX/XXXX -> hh:mm:ss => " << "Temp : " << m_lastTemp << " | Humidity : " << m_lastHumidity << " | Light : " << m_lastLight << " | Sound : " << m_lastSound << endl;
   }
 }
 
@@ -59,15 +59,15 @@ void Server::consolWrite(ostream &flux) const
 {
   if(m_consolActivation)
   {
-    flux << "******* Derniere mesure : *******" << endl;
+    flux << "******* Last measurement : *******" << endl;
     flux << " - Temperature : " << m_lastTemp <<endl;
-    flux << " - Humidity : " << m_lastTemp <<endl;
+    flux << " - Humidity : " << m_lastHumidity <<endl;
     flux << " - Light : " << m_lastLight <<endl;
     flux << " - Sound : " << m_lastSound <<endl;
   }
 }
 
-namespace test
+namespace streamOverload
 {
   ofstream &operator<<(ofstream &flux, const Server &Serv)
   {
