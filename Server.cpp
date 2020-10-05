@@ -1,3 +1,10 @@
+/**
+* @author pierre_clerc
+* @file Server.cpp
+* @date 05 / 10 / 2020
+* @brief La classe Server reçoit et stocke des données depuis la (future) classe Sensor.
+*/
+
 #include <iostream>
 #include <fstream>
 #include "Server.hpp"
@@ -19,7 +26,7 @@ Server::~Server()
 {
 }
 
-Server& Server::operator=(const Server &copieServer)
+Server& Server::operator=(const Server& copieServer)
 {
   this->m_temperature = copieServer.m_temperature;
   this->m_humidity = copieServer.m_humidity;
@@ -28,13 +35,30 @@ Server& Server::operator=(const Server &copieServer)
   return *this;
 }
 
-ostream &operator<<(ostream &flux, Server const &server)
+/**
+ * \fn ostream &operator<<(ostream &flux, Server const &server)
+ * \brief Fonction qui permet de surcharger l'opérateur << pour écrire sur la console ou dans un fichier
+ *
+ * \param ostream& Adresse de l'objet ostream qui permet de créer la sortie vers console/fichier
+ * \param Server const& Adresse de l'objet constant Server qui stock les données à afficher
+ * \return flux permet de retourner le flux vers la console/fichier
+ */
+
+ostream& operator<<(ostream& flux, Server const& server)
 {
   server.afficher(flux);
   return flux;
 }
 
-void Server::afficher(ostream &flux) const
+/**
+ * \fn void Server::afficher(ostream& flux) const
+ * \brief Fonction qui permet d'afficher les attributs de la classe Server
+ *
+ * \param ostream& Adresse de l'objet ostream qui permet de créer la sortie vers console/fichier
+ * \return rien, c'est une fonction void
+ */
+
+void Server::afficher(ostream& flux) const
 {
   flux 
   << "temperature: " << m_temperature << endl 
