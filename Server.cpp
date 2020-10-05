@@ -11,8 +11,6 @@
 #include <string>
 #include <fstream>
 
-#define filename
-
 using namespace std;
 
 using namespace streamOverload;
