@@ -1,6 +1,14 @@
-#include <iostream>
+/**
+ * @author  Aurélien GOUY
+ * @file  main.cpp
+ * @date 05/10/2020
+ * @brief  Fonction main du projet : fonction principale
+*/
 
+//Guards
+#include <iostream>
 #include "Server.hpp"
+
 
 using namespace std;
 
@@ -24,6 +32,8 @@ int main()
             m_fileWriteActivation = false;
         }
     Server::fileWrite();
+
+
 
     //Demande affichage des données
     do
