@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../headers/Sensor.hpp"
 #include "../headers/Server.hpp"
 
 using namespace std;
